@@ -1,0 +1,123 @@
+.theme-selector-container {
+  position: relative;
+  display: inline-block;
+}
+
+.theme-selector-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+}
+
+.theme-selector-trigger:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.theme-color-preview-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-primary);
+}
+
+.theme-trigger-label {
+  display: inline-block;
+}
+
+/* Dropdown Menu */
+.theme-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  padding: 0.6rem;
+  border-radius: 18px;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.theme-dropdown-header {
+  padding: 0.4rem 0.6rem 0.6rem 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.4rem;
+}
+
+.theme-header-title {
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.theme-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.theme-option-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.theme-option-row:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffffff;
+}
+
+.theme-option-row.selected {
+  background: var(--accent-light);
+  color: #ffffff;
+}
+
+.theme-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.theme-name {
+  flex: 1;
+}
+
+.theme-check-icon {
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .theme-trigger-label {
+    display: none;
+  }
+}

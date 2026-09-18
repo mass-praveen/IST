@@ -1,0 +1,98 @@
+.topbar {
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  width: 400px;
+  transition: all 0.2s ease;
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.search-icon {
+  color: var(--text-tertiary);
+  margin-right: 0.75rem;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon-btn {
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--error);
+  border-radius: 50%;
+  border: 2px solid var(--bg-surface);
+}
+
+.user-profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.user-profile-trigger:hover {
+  background: var(--bg-surface);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.user-role {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}

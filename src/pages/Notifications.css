@@ -1,0 +1,125 @@
+.notifications-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.notif-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.notif-state-message {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notif-state-message p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.notif-state-message span {
+  font-size: 0.85rem;
+}
+
+.notif-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.notif-list-item:last-child {
+  border-bottom: none;
+}
+
+.notif-list-item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.notif-list-item.unread {
+  background: rgba(var(--accent-rgb), 0.03);
+}
+
+.notif-icon {
+  margin-top: 0.2rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+.notif-content-full {
+  flex: 1;
+}
+
+.notif-content-full h4 {
+  font-size: 0.95rem;
+  margin: 0 0 0.3rem 0;
+  color: var(--text-primary);
+}
+
+.notif-content-full p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.5;
+}
+
+.notif-content-full .time {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.notif-list-item .unread-dot {
+  margin-top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}

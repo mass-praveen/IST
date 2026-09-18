@@ -1,0 +1,132 @@
+.daily-practice-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.daily-hero-banner {
+  padding: 2.8rem;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.progress-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+  font-size: 0.95rem;
+}
+
+.streak-badge-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.25) 100%);
+  border: 2px solid rgba(245, 158, 11, 0.4);
+  padding: 1.6rem 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.25);
+}
+
+.streak-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.streak-num {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #fbbf24;
+  line-height: 1;
+}
+
+.streak-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.all-tasks-celebration {
+  padding: 1.4rem 2rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(19, 25, 38, 0.9) 100%);
+  border: 1.5px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+}
+
+.tasks-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.daily-task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2rem;
+  border-radius: 18px;
+  background: rgba(19, 25, 38, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.daily-task-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateX(4px);
+}
+
+.daily-task-item.task-completed {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.roadmap-preview-card {
+  padding: 2.2rem;
+  border-radius: 20px;
+}
+
+.sprint-days-row {
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  padding-bottom: 0.6rem;
+}
+
+.sprint-day-chip {
+  padding: 0.9rem 1.4rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sprint-day-chip:hover {
+  transform: translateY(-2px);
+}
+
+.sprint-day-chip.done {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.sprint-day-chip.current {
+  background: rgba(99, 102, 241, 0.2);
+  color: #a5b4fc;
+  border: 1.5px solid var(--accent-primary);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+}
+
+.sprint-day-chip.locked {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-tertiary);
+  border: 1px solid var(--border-subtle);
+}
