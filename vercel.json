@@ -4,5 +4,10 @@
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api" },
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "functions": {
+    "api/**/*": {
+      "includeFiles": "node_modules/better-sqlite3/**/*.node"
+    }
+  }
 }
