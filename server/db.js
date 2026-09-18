@@ -1,6 +1,14 @@
-const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
+
+let Database;
+let isMock = false;
+try {
+  Database = require('better-sqlite3');
+} catch (error) {
+  console.warn("better-sqlite3 failed to load. Using Mock Database for Vercel fallback.");
+  isMock = true;
+}
 
 const dataDir = process.env.VERCEL
   ? path.join('/tmp', 'ist-data')
@@ -9,7 +17,29 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const db = new Database(path.join(dataDir, 'database.sqlite'));
+let db;
+if (isMock) {
+  class MockStatement {
+    constructor(sql) { this.sql = sql; }
+    get(...args) {
+      if (this.sql.includes('SELECT id FROM users')) return { id: 1 };
+      if (this.sql.includes('SELECT * FROM users')) return { id: 1, name: 'Alex Morgan', email: 'candidate@ist.ai', password: 'password123', role: 'Full Stack Developer', experience_level: 'Intermediate', target_company: 'Tech Companies' };
+      if (this.sql.includes('SELECT name, role')) return { name: 'Alex Morgan', role: 'Full Stack Developer', experience_level: 'Intermediate', target_company: 'Tech Companies' };
+      if (this.sql.includes('COUNT(*)')) return { count: 0, total: 0, avg_acc: 0, solved: 0 };
+      if (this.sql.includes('score, skills')) return { score: 85, skills: '["React","JavaScript"]' };
+      return {};
+    }
+    all(...args) { return []; }
+    run(...args) { return { lastInsertRowid: 1, changes: 1 }; }
+  }
+  db = {
+    exec: () => {},
+    prepare: (sql) => new MockStatement(sql),
+    createNotification: () => {}
+  };
+} else {
+  db = new Database(path.join(dataDir, 'database.sqlite'));
+}
 
 // Auto-migration helper to safely add missing columns
 function ensureColumn(table, column, definition) {

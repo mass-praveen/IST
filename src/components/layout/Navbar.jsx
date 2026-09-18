@@ -20,6 +20,7 @@ const navItems = [
   { path: '/daily', label: 'Daily Practice', icon: Flame },
   { path: '/coach', label: 'AI Coach', icon: Bot },
   { path: '/progress', label: 'Progress & Report', icon: LineChart },
+  { path: '/reports', label: 'Detailed Reports', icon: FileText },
   { path: '/history', label: 'Activity History', icon: FileText },
   { path: '/profile', label: 'My Profile', icon: User },
 ];

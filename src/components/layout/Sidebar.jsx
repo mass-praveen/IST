@@ -15,6 +15,7 @@ const navItems = [
   { path: '/daily', label: 'Daily Practice', icon: Flame, badge: 'Streak' },
   { path: '/coach', label: 'AI Career Coach', icon: Bot },
   { path: '/progress', label: 'Progress & Reports', icon: LineChart },
+  { path: '/reports', label: 'Detailed Reports', icon: FileText },
   { path: '/profile', label: 'My Profile', icon: User },
 ];
 

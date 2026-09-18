@@ -14,6 +14,7 @@ import Profile from './pages/Profile';
 import Progress from './pages/Progress';
 import Notifications from './pages/Notifications';
 import History from './pages/History';
+import Reports from './pages/Reports';
 import './App.css'; // Global App overrides if any
 
 function RequireAuth({ children }) {
@@ -43,6 +44,7 @@ function App() {
             <Route path="/progress" element={<Progress />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/history" element={<History />} />
+            <Route path="/reports" element={<Reports />} />
           </Route>
 
           {/* Catch-all fallback */}
