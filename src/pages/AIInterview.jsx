@@ -1141,15 +1141,6 @@ export default function AIInterview() {
                 <span className="flex-center" style={{gap: '0.4rem', fontSize: '0.88rem', fontWeight: 600}}>
                   <Mic size={15} className={isRecognizing ? 'text-danger pulse' : 'text-accent'} />
                   {isRecognizing ? 'Live Voice Transcribing...' : 'Your Spoken / Typed Response'}
-                  {isRecognizing && (
-                    <div className="audio-visualizer-bars" style={{ marginLeft: '10px' }}>
-                      <div className="wave-bar recording"></div>
-                      <div className="wave-bar recording"></div>
-                      <div className="wave-bar recording"></div>
-                      <div className="wave-bar recording"></div>
-                      <div className="wave-bar recording"></div>
-                    </div>
-                  )}
                 </span>
                 <button className="btn-auto-sample" onClick={handleSampleAnswerFill}>
                   Auto-Fill Sample Answer
