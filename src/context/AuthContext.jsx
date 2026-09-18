@@ -3,6 +3,16 @@ import { endpoints } from '../utils/api';
 
 const AuthContext = createContext();
 
+async function readApiResponse(response, fallbackMessage) {
+  const contentType = response.headers.get('content-type') || '';
+  if (contentType.includes('application/json')) {
+    return response.json();
+  }
+
+  const message = await response.text();
+  throw new Error(message || fallbackMessage);
+}
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     try {
@@ -25,7 +35,7 @@ export function AuthProvider({ children }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
-      const data = await res.json();
+      const data = await readApiResponse(res, 'Login failed');
       if (!res.ok) throw new Error(data.error || 'Login failed');
       setUser(data.user);
       setIsAuthenticated(true);
@@ -43,7 +53,7 @@ export function AuthProvider({ children }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      const data = await res.json();
+      const data = await readApiResponse(res, 'Signup failed');
       if (!res.ok) throw new Error(data.error || 'Signup failed');
       setUser(data.user);
       setIsAuthenticated(true);
