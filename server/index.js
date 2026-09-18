@@ -38,10 +38,14 @@ app.use('/api/dashboard', require('./routes/dashboard'));
 app.use('/api/history', require('./routes/history'));
 app.use('/api/notifications', require('./routes/notifications'));
 
-app.listen(PORT, () => {
-  console.log('\\n---------------------------------');
-  console.log('IST Master Backend started successfully');
-  console.log(`Server: http://localhost:${PORT}`);
-  console.log('Health: /api/health');
-  console.log('---------------------------------\\n');
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log('\n---------------------------------');
+    console.log('IST Master Backend started successfully');
+    console.log(`Server: http://localhost:${PORT}`);
+    console.log('Health: /api/health');
+    console.log('---------------------------------\n');
+  });
+}
+
+module.exports = app;
