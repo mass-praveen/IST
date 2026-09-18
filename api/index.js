@@ -7,9 +7,7 @@ export default async function handler(req, res) {
     console.error("Vercel Initialization Error:", error);
     res.status(500).json({
       success: false,
-      error: "Server Initialization Failed",
-      details: error.message,
-      stack: error.stack
+      error: "Crash: " + error.message
     });
   }
 }
