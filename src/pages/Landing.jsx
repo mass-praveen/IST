@@ -64,17 +64,17 @@ export default function Landing() {
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="hero-title">
-            Practice Smarter.<br/>
-            <span className="text-gradient">Interview Better.</span>
+            Your Personal AI<br/>
+            <span className="text-gradient">Video Interviewer.</span>
           </motion.h1>
           
           <motion.p variants={itemVariants} className="hero-subtitle">
-            Master your technical and behavioral interviews with real-time AI feedback, tailored mock sessions, and actionable insights.
+            Face realistic AI interviewers, practice face-to-face, and get deep technical and behavioral feedback tailored to your exact resume.
           </motion.p>
           
           <motion.div variants={itemVariants} className="hero-ctas">
-            <Link to={isAuthenticated ? "/dashboard" : "/login"} className="btn btn-primary premium-btn hero-btn">
-              {isAuthenticated ? 'Go to Dashboard' : 'Start AI Interview'} <ChevronRight size={18} />
+            <Link to={isAuthenticated ? "/dashboard" : "/login"} className="btn btn-primary premium-btn hero-btn" style={{ boxShadow: '0 0 20px var(--accent-glow)' }}>
+              {isAuthenticated ? 'Launch Interview Now' : 'Start Video Interview'} <ChevronRight size={18} />
             </Link>
             <a href="#features" className="btn btn-secondary premium-btn-outline hero-btn">
               Explore Features
@@ -89,25 +89,29 @@ export default function Landing() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="floating-card score-card glass-panel-premium premium-border">
-            <span className="fc-label">Overall Readiness</span>
-            <div className="fc-value text-gradient">92%</div>
-            <div className="progress-track"><div className="progress-fill" style={{width:'92%'}}></div></div>
-          </div>
-          
-          <div className="floating-card insight-card glass-panel-premium premium-border">
-            <div className="fc-icon"><BrainCircuit size={18} className="text-accent" /></div>
-            <div>
-              <span className="fc-label">AI Feedback</span>
-              <div className="fc-text">Great eye contact and strong technical clarity!</div>
-            </div>
-          </div>
-
-          <div className="floating-card confidence-card glass-panel-premium premium-border">
-            <ShieldCheck size={24} className="text-success" />
-            <div>
-              <span className="fc-label">Confidence Level</span>
-              <div className="fc-value-small">High</div>
+          <div className="mock-video-ui glass-panel-premium premium-border" style={{
+            position: 'relative', width: '100%', height: '320px', borderRadius: '24px', overflow: 'hidden',
+            display: 'flex', flexDirection: 'column', padding: '1rem', background: '#0b0f19', border: '1px solid var(--accent-primary)',
+            boxShadow: '0 20px 50px rgba(0,0,0,0.6)'
+          }}>
+            {/* Split Screen Grid */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem', flex: 1 }}>
+              {/* AI Avatar Pane */}
+              <div style={{ background: '#111827', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                <div style={{ position: 'absolute', bottom: '10px', left: '15px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div style={{ width: '8px', height: '8px', background: '#10b981', borderRadius: '50%', boxShadow: '0 0 8px #10b981' }}></div>
+                  <span style={{ fontSize: '12px', fontWeight: 600, color: '#fff' }}>Sarah (AI Hiring Manager)</span>
+                </div>
+                <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'radial-gradient(circle, #312e81 0%, #0f172a 100%)', border: '2px solid var(--accent-primary)', boxShadow: '0 0 30px var(--accent-glow)' }}></div>
+              </div>
+              {/* User Camera Pane */}
+              <div style={{ background: '#1e293b', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                <div style={{ position: 'absolute', bottom: '10px', left: '15px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div style={{ width: '8px', height: '8px', background: '#f43f5e', borderRadius: '50%', animation: 'pulse 1.5s infinite' }}></div>
+                  <span style={{ fontSize: '12px', fontWeight: 600, color: '#fff' }}>You</span>
+                </div>
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)' }}></div>
+              </div>
             </div>
           </div>
         </motion.div>

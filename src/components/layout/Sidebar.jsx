@@ -42,7 +42,7 @@ export default function Sidebar() {
               key={item.path}
               to={item.path}
               className={({ isActive }) => 
-                `nav-item ${isActive ? 'active' : ''}`
+                `nav-item ${item.path === '/interview' ? 'premium-nav-item' : ''} ${isActive ? 'active' : ''}`
               }
               title={!isExpanded ? item.label : undefined}
             >

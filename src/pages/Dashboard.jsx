@@ -101,8 +101,40 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-
-
+      {/* Massive Hero Action: Launch AI Video Interview */}
+      <div className="hero-action-card mt-4" style={{
+        background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%)',
+        border: '1px solid var(--accent-primary)',
+        borderRadius: '24px',
+        padding: '2.5rem',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        boxShadow: '0 8px 32px rgba(99, 102, 241, 0.15)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div style={{ position: 'relative', zIndex: 2 }}>
+          <div className="badge mb-3" style={{ background: 'var(--accent-primary)', color: '#fff', display: 'inline-flex', padding: '0.4rem 1rem', borderRadius: '20px', fontWeight: 'bold' }}>
+            <Video size={16} style={{ marginRight: '8px' }} /> Core Feature
+          </div>
+          <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: '0.5rem' }}>AI Video Mock Interview</h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', marginBottom: '2rem' }}>
+            Practice behavioral and technical questions face-to-face with an AI interviewer. Customized using your resume keywords.
+          </p>
+          <button className="btn btn-primary premium-btn flex-center" onClick={() => navigate('/interview')} style={{ fontSize: '1.2rem', padding: '1rem 2.5rem', borderRadius: '16px' }}>
+            <Play size={24} style={{ marginRight: '12px' }} /> Launch Live Interview Now
+          </button>
+        </div>
+        
+        {/* Decorative elements */}
+        <div style={{
+          position: 'absolute', right: '-5%', top: '-20%', 
+          width: '350px', height: '350px', 
+          background: 'radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%)',
+          borderRadius: '50%', zIndex: 1
+        }}></div>
+      </div>
 
       {/* Primary KPI Metrics Grid */}
       <div className="stats-kpi-grid mt-4">
@@ -220,27 +252,7 @@ export default function Dashboard() {
       </div>
 
       {/* Quick Launch & Recent Activity */}
-      <div className="dashboard-bottom-grid mt-4">
-        {/* Recommended Daily Action */}
-        <div className="action-cta-card glass-panel-premium-premium">
-          <div className="space-between mb-2">
-            <span className="badge">Recommended Sprint</span>
-            <span className="text-secondary text-sm">Est. 20 mins</span>
-          </div>
-          <h2>AI Video Mock Interview</h2>
-          <p className="text-secondary mb-3">
-            Practice behavioral and technical questions customized with your recent resume keywords.
-          </p>
-          <div className="cta-buttons-row mt-4">
-            <button className="btn btn-primary premium-btn flex-center" onClick={() => navigate('/interview')}>
-              <Play size={16} /> Launch Interview
-            </button>
-            <button className="btn btn-secondary premium-btn-outline flex-center" onClick={() => navigate('/coding')}>
-              <Code2 size={16} /> Solve Code
-            </button>
-          </div>
-        </div>
-
+      <div className="dashboard-bottom-grid mt-4" style={{ gridTemplateColumns: '1fr' }}>
         {/* Recent Performance Activity */}
         <div className="recent-activity-panel glass-panel-premium-premium">
           <div className="space-between mb-3">
