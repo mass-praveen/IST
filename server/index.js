@@ -4,19 +4,7 @@ const cors = require('cors');
 const db = require('./db');
 
 const app = express();
-const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173,http://127.0.0.1:4173')
-  .split(',')
-  .map((origin) => origin.trim())
-  .filter(Boolean);
-
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-    return callback(new Error('Origin is not allowed by CORS.'));
-  },
-}));
+app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
